@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load first_tags %}
+{% block title %}About {% endblock%} 
+{% block content %} 
+Hey, I'm in About Page..
+
+<h1>{{auther}}</h1>
+<!-- <h1>{{auther|change_name:'change'}}</h1>
+<h1>{{auther|change_name:'title'}}</h1> -->
+
+{% show_courses %}
+
+{% endblock%} 
+

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+<form class="col-6 mx-auto mt-6 shadow-lg" method='post'>
+    {% csrf_token %}
+    <h2>Change Password </h2>
+
+    {% if messages %}
+        {% for msg in messages %}
+        <div class="bg-success text-white p-3">{{msg}}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% if Form.non_field_errors %}
+    {% for msg in Form.non_field_errors %}
+    <p class="bg-danger text-white p-3">{{msg}}</p>
+    {% endfor %}
+    {% endif %}
+    <!-- {{Form|crispy}} -->
+
+    {% for fm in Form %}
+    {{fm.label_tag}}
+    {{fm}}
+    {{fm.errors|striptags}}
+    {% endfor %}
+    <br>
+    <button class="btn btn-primary btn-center"> Change Password</button>
+</form>
+
+{% endblock %}

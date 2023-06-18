@@ -1,0 +1,18 @@
+{% load first_tags %}
+
+<table class="table table-bordered table-primary">
+    <thead class="table-light">
+        <th>ID</th>
+        <th>Course</th>
+        <th>Teacher</th>
+    </thead>
+    <tbody>
+        {% for crs in courses %}
+            <tr>
+                <td>{{crs.id}}</td>
+                <td>{{crs.course}}</td>
+                <td>{{crs.Teacher}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

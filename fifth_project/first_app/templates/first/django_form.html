@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+<form method="post" class="col-6 mx-auto card p-3 shadow-lg" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{Form|crispy}}
+    <!-- {{Form.as_p}} -->
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+
+
+{% endblock %}

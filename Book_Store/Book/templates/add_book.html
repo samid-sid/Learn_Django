@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block start %}
+<div style="width: 40%; margin:auto">
+    <form class="col-8  shadow-lg" method="post"> 
+        {% csrf_token %}
+        {% if messages %}
+        {% for msg in  messages %}
+        <div class="alert alert-info" role="alert">
+            {{msg}}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {{form|crispy}}
+
+        <button class="btn btn-primary">ADD</button>
+    </form>
+</div>
+
+{% endblock %}

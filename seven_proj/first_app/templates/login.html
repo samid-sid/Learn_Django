@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+
+<form class="col-6 mx-auto mt-6 shadow-lg" method='post'>
+    {% csrf_token %}
+    <!-- {{Form|crispy}} -->
+    <h2>Login Form </h2>
+
+
+    {% if Form.non_field_errors %}
+
+    {% for msg in Form.non_field_errors %}
+    <p class="bg-danger text-white p-3">{{msg}}</p>
+    {{msg}}
+    {% endfor %}
+
+    {% endif %}
+
+    {% for fm in Form %}
+    {{fm.label_tag}}
+    {{fm}}
+    {{fm.errors|striptags}}
+    {% endfor %}
+    <br>
+    <p>Not Have Account? <a href="{% url 'signup' %}">Sign Up</a></p>
+    <button class="btn btn-primary btn-center"> Login</button>
+</form>
+
+
+{% endblock %}

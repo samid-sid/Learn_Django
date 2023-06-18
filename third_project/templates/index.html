@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+    <h1>This is my first Ever django template</h1>
+
+    <a href="http://phitron.io" target="_blank"> Click Here</a> <br>
+    {% static 'image/samid2.jpg' as samid %}
+    <img src="{{samid}}" alt="Samid Sid" height="500" width="500"> <br>
+    <img src="{% static 'image/samid1.jpeg' %}" alt="Samid Sid pro">
+
+    <script src="{% static 'javascript/index.js' %}"></script>
+</body>
+</html>
